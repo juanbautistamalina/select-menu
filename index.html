@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Selección</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="hero">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Selecciona una red social</p>
+                <img src="img/arrow.png" id="arrowIcon">
+            </div>
+        </div>
+
+        <ul id="list" class="hide">
+            <li class="options">
+                <img src="img/facebook.png">
+                <p>Facebook</p>
+            </li>
+            <li class="options">
+                <img src="img/youtube.png">
+                <p>YouTube</p>
+            </li>
+            <li class="options">
+                <img src="img/instagram.png">
+                <p>Instagram</p>
+            </li>
+            <li class="options">
+                <img src="img/x.png">
+                <p>X</p>
+            </li>
+            <li class="options">
+                <img src="img/pinterest.png">
+                <p>Pinterest</p>
+            </li>
+            <li class="options">
+                <img src="img/whatsapp.png">
+                <p>WhatsApp</p>
+            </li>
+        </ul>
+   </div>
+
+   <script>
+        let selectField = document.getElementById("selectField");
+        let selectText = document.getElementById("selectText");
+        let options = document.getElementsByClassName("options");
+        let list = document.getElementById("list");
+        let arrowIcon = document.getElementById("arrowIcon");
+        
+
+        for(option of options){
+            option.onclick = function(){
+                selectText.innerHTML = this.innerText;
+                list.classList.toggle("hide");
+                arrowIcon.classList.toggle("rotate");
+            }
+        }
+
+        selectField.onclick = function(){
+            list.classList.toggle("hide");
+            arrowIcon.classList.toggle("rotate");
+        }
+   </script>
+</body>
+</html>
